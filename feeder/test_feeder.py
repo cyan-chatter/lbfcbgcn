@@ -1,10 +1,3 @@
-###################################################################
-# File Name: test_feeder.py
-# Author: Zhongdao Wang
-# mail: wcd17@mails.tsinghua.edu.cn
-# Created Time: Thu 06 Sep 2018 04:09:46 PM CST
-###################################################################
-
 from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import

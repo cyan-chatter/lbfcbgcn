@@ -152,11 +152,11 @@ if __name__ == '__main__':
     # Training args
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--feat_path', type=str, metavar='PATH',
-                        default=osp.join(working_dir, '../facedata/CASIA.feas.npy'))
+                        default=osp.join(working_dir, './facedata/CASIA.feas.npy'))
     parser.add_argument('--knn_graph_path', type=str, metavar='PATH',
-                        default=osp.join(working_dir, '../facedata/knn.graph.CASIA.kdtree.npy'))
+                        default=osp.join(working_dir, './facedata/knn.graph.CASIA.kdtree.npy'))
     parser.add_argument('--label_path', type=str, metavar='PATH',
-                        default=osp.join(working_dir, '../facedata/CASIA.labels.npy'))
+                        default=osp.join(working_dir, './facedata/CASIA.labels.npy'))
     parser.add_argument('--k-at-hop', type=int, nargs='+', default=[200,10])
     parser.add_argument('--active_connection', type=int, default=10)
 
