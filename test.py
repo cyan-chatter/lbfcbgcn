@@ -2,8 +2,10 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 
+
 import os.path as osp
 import time
+
 import numpy as np
 
 import torch
@@ -11,6 +13,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.backends import cudnn
 from torch.utils.data import DataLoader
+
 
 import gcn
 from auxi.feeder import Feeder
@@ -66,6 +69,7 @@ def main(working_dir):
     net.load_state_dict(ckpt['state_dict'])
 
     #Loading the gcn and its parameters into the GPU
+
     net = net.cuda()
 
     #Setting the KNN Graph

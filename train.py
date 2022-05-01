@@ -1,4 +1,3 @@
-
 from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
@@ -6,6 +5,7 @@ from __future__ import absolute_import
 import os.path as osp
 import sys
 import time
+
 import numpy as np
 
 import torch
@@ -52,6 +52,7 @@ def main(working_dir):
 
     # Setting up the Model
     net = gcn.gcn().cuda()
+
     opt = torch.optim.SGD(net.parameters(), args.lr,
                           momentum=args.momentum, 
                           weight_decay=args.weight_decay) 
@@ -95,7 +96,6 @@ def train(loader, net, crit, opt, epoch):
 
         #Clearing the gradients
         opt.zero_grad()
-
         # Performing Backpropagation
         loss.backward()
         opt.step()
