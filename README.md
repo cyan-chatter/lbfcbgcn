@@ -8,21 +8,21 @@ We describe a method for face clustering that is both accurate and scalable. We 
 
 The project has been implemented in python 3.9.7, pytorch build 1.11.0, CUDA 11.3, Windows 10 OS
 
-## DATASET:
+## DATASET
 
 Subsets of CASIA, IJB-B dataset have been used for training and testing dataset respectively.
 
-## TRAINING:
+## TRAINING
 
 We train the GCN to learn the weights. Training has been done in batches of 32.
 
-## TESTING:
+## TESTING
 
 During inference, the test script will dynamically output the pairwise precision/recall/accuracy. After each subgraph is processed, the test script will output the final B-Cubed precision/recall/F-score and NMI score.
 
-## MODULES:
+## MODULES
 
-## AUXI:
+## AUXI
 
 1. **feeder:**
 - **__init__:** Generate a sub-graph from the feature graph centered at some node, and now the sub-graph has a fixed depth, i.e. 2
@@ -35,13 +35,13 @@ During inference, the test script will dynamically output the pairwise precision
 4. **meters:** Computes and stores the average and current value.
 5. **serialization:** used to save and load checkpoints.
 
-## GCN:
+## GCN
 
 1. **MeanAggregator:** Performs mean aggregation on the adjacency matrix of IPS **D<sup>-1/2</sup>AD<sup>-1/2</sup>** to obtain aggregated matrix G.
 2. **GraphConv:** Performs the convolution operation on aggregated matrix **(X||G.X).W** (for a single layer)
 3. **GCN:** performs forward propagation
 
-## ARGS:
+## ARGS
 
 1. **train args:** arguments passed during training are initialised in this module
 2. **test args:** arguments passed during testing rae initialised in this module
