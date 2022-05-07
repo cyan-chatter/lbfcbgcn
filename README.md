@@ -22,26 +22,26 @@ During inference, the test script will dynamically output the pairwise precision
 
 ## MODULES
 
-## AUXI
+### AUXI
 
-1. **feeder:**
-- **__init__:** Generate a sub-graph from the feature graph centered at some node, and now the sub-graph has a fixed depth, i.e. 2
-- **__getitem__:** return the vertex feature and the adjacent matrix A, together with the indices of the center node and its 1-hop nodes
-2. **graph:**
-- **class data:** initialise the data, return links, add links in the graph
-- **connected_components:** searching the connected components
-- **connected_components_constraint:** only use edges whose scores are above *th* if a component is larger than *max_sz*, all the nodes in this component are added into *remain* and returned for next iteration.
-3. **logging:** used for managing the logs (checkpoints).
-4. **meters:** Computes and stores the average and current value.
-5. **serialization:** used to save and load checkpoints.
+  1. **feeder:**
+    - **__init__:** Generate a sub-graph from the feature graph centered at some node, and now the sub-graph has a fixed depth, i.e. 2
+    - **__getitem__:** return the vertex feature and the adjacent matrix A, together with the indices of the center node and its 1-hop nodes
+  2. **graph:**
+    - **class data:** initialise the data, return links, add links in the graph
+    - **connected_components:** searching the connected components
+    - **connected_components_constraint:** only use edges whose scores are above *th* if a component is larger than *max_sz*, all the nodes in this component are added into *remain* and returned for next iteration.
+  3. **logging:** used for managing the logs (checkpoints).
+  4. **meters:** Computes and stores the average and current value.
+  5. **serialization:** used to save and load checkpoints.
 
-## GCN
+### GCN
 
-1. **MeanAggregator:** Performs mean aggregation on the adjacency matrix of IPS **D<sup>-1/2</sup>AD<sup>-1/2</sup>** to obtain aggregated matrix G.
-2. **GraphConv:** Performs the convolution operation on aggregated matrix **(X||G.X).W** (for a single layer)
-3. **GCN:** performs forward propagation
+  1. **MeanAggregator:** Performs mean aggregation on the adjacency matrix of IPS **D<sup>-1/2</sup>AD<sup>-1/2</sup>** to obtain aggregated matrix G.
+  2. **GraphConv:** Performs the convolution operation on aggregated matrix **(X||G.X).W** (for a single layer)
+  3. **GCN:** performs forward propagation
 
-## ARGS
+### ARGS
 
-1. **train args:** arguments passed during training are initialised in this module
-2. **test args:** arguments passed during testing rae initialised in this module
+  1. **train args:** arguments passed during training are initialised in this module
+  2. **test args:** arguments passed during testing rae initialised in this module
