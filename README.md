@@ -3,7 +3,7 @@
 ## INTRODUCTION
 
 We implement a method for face clustering that is both accurate and scalable, proposed in this research paper:
-[**Linkage Based Face Clustering By Graph Convolutional Networks**](https://arxiv.org/abs/1903.11306)
+[**Linkage Based Face Clustering via Graph Convolutional Networks**](https://arxiv.org/abs/1903.11306)
 
 The problem is to categorise a group of faces based on their possible identities. This problem is formulated as a link prediction problem: if two faces have the same identity, there is a link between them. The basic concept is that the local context in the feature space surrounding an instance(face) carries a wealth of information about the linkage relationship between this instance and its neighbours. The graph convolution network (GCN) is used to do reasoning and infer the likelihood of linkage between pairings in the sub-graphs by creating sub-graphs around each instance as input data, which describe the local context.
 
