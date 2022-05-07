@@ -24,16 +24,17 @@ During inference, the test script will dynamically output the pairwise precision
 
 ### AUXI
 
-..1. **feeder:**
-....* **__init__:** Generate a sub-graph from the feature graph centered at some node, and now the sub-graph has a fixed depth, i.e. 2
-....* **__getitem__:** return the vertex feature and the adjacent matrix A, together with the indices of the center node and its 1-hop nodes
-..1. **graph:**
-....* **class data:** initialise the data, return links, add links in the graph
-....* **connected_components:** searching the connected components
-....* **connected_components_constraint:** only use edges whose scores are above *th* if a component is larger than *max_sz*, all the nodes in this component are added into *remain* and returned for next iteration.
-..1. **logging:** used for managing the logs (checkpoints).
-..1. **meters:** Computes and stores the average and current value.
-..1. **serialization:** used to save and load checkpoints.
+  1. **feeder:**
+  - **__init__:** Generate a sub-graph from the feature graph centered at some node, and now the sub-graph has a fixed depth, i.e. 2
+  - **__getitem__:** return the vertex feature and the adjacent matrix A, together with the indices of the center node and its 1-hop nodes
+  2. **graph:**
+  - **class data:** initialise the data, return links, add links in the graph
+  - **connected_components:** searching the connected components      
+  - **connected_components_constraint:** only use edges whose scores are above *th* if a component is larger than *max_sz*, all the nodes in this component are added into *remain* and returned for next iteration.
+
+  3. **logging:** used for managing the logs (checkpoints).
+  4. **meters:** Computes and stores the average and current value.
+  5. **serialization:** used to save and load checkpoints.
 
 ### GCN
 
